@@ -1,21 +1,30 @@
 public class Main {
     public static void main(String[] args) {
-        Person women = new Person();
-        women.name = "Marie";
-        women.age = 26;
-        women.gender = "women";
-        System.out.println("Name: " + women.name + " | gender: " + women.gender + " | age: " + women.age);
+        Person woman = new Person("Marie",26,"women");
+        System.out.println(woman);
 
-        Person men = new Person();
-        men.name ="Sam";
-        men.age = 30;
-        men.gender = "men";
-        System.out.println("Name: " + men.name + " | gender: " + men.gender + " | age: " + men.age);
+        Person man = new Person("Sam",30,"men");
+        System.out.println(man);
     }
 }
 
 class Person {
-    String name;
-    int age;
-    String gender;
+   private String name;
+   private int age;
+   private String gender;
+
+    public Person(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
 }
